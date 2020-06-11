@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#283593"/>
+  <title>Pneumonia Lungs Detection</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.14.2/dist/tf.min.js"></script>
+  <script src="./js/main.js"></script>
+  <link rel="shortcut icon" href="./images/favicon.png">
+  <link rel="stylesheet" type="text/css" href="./css/materialize.css">
+  <link rel="stylesheet" type="text/css" href="./css/mine.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css">
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div class="preloader-background">
+      <div class="preloader-wrapper big active">
+          <div class="spinner-layer spinner-blue-only">
+              <div class="circle-clipper left">
+                  <div class="circle"></div>
+              </div>
+              <div class="gap-patch">
+                  <div class="circle"></div>
+              </div>
+              <div class="circle-clipper right">
+                  <div class="circle"></div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Content -->
+  <div class="container">
+    <h3 class="title">Lungs Disease Detection</h3>
+    <h3 class="title" style="font-size: 200%">Using X-Ray Images</h3>
+    <h3 class="title" style="font-size: 100%">By : Fahmi Jabbar</h3>
+    <div class="center-align">
+      <canvas id="canvas" class="canvas" width=250 height=250></canvas>
+      <div class="button-wrapping center-align">
+        <a class="waves-effect waves-light btn indigo darken-3">Upload</a>
+        <input type="file" id="file" class="hide_file">
+      </div>
+      <div id="output"></div>
+    </div>
+    <!-- FAB -->
+    <div class="fixed-action-btn toolbar">
+        <a class="btn-floating btn-large indigo darken-3 pulse" onclick="changeColor()">
+          <i class="far fa-bars"></i>
+        </a>
+        <ul>
+          <li class="waves-effect waves-light"><a href="https://github.com/fahmij8/CodersWeek-ML"><i id="text-color1" class="fab fa-github fa-2x fa-swap-opacity transparent-text"></i></a></li>
+          <li class="waves-effect waves-light"><a href="#modal1" class="modal-trigger" onclick="colorChange()"><i id="text-color2" class="fad fa-question-circle fa-2x transparent-text"></i></a></li>
+          <li class="waves-effect waves-light"><a href="https://github.com/fahmij8/CodersWeek-ML/tree/master/docs/images" onclick="colorChange()"><i id="text-color3" class="fad fa-download fa-2x transparent-text"></i></a></li>
+          <li class="waves-effect waves-light"><a href="#!" onclick="colorChange()"><i id="text-color4" class="far fa-undo-alt fa-2x transparent-text"></i></a></li>
+        </ul>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>How to use this tool</h4>
+            <p>Dataset : <a href="https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia">Chest X-Ray Dataset</a></p>
+            <p><b>Disclaimer : </b>I didn't guaranteed that this model is 100% perfect for predicting X-Ray Images</p>
+            <p>My model final accuracy is below <b>90%</b>. So There's a lot to be improved, and it will happen soon</p>
+            <p>To see the source code of the model and this website, click github icon</p>
+            <p>To download sample images, click download icon</p>
+      </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Understood!</a>
+        </div>
+    </div>
+  </div>
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="./js/materialize.js"></script>
+<script src="./js/install.js"></script>
+</html>
